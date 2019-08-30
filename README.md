@@ -2,8 +2,9 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Mathinfoly](http://www.mathinfoly.org/assets/img/logo/logomathinfoly2.png)</br></br>
+
 Solution about 3 Coloring Problem by using SAT Solver Glucose.</br>
-**Group Member**: Kelun CHAI, [Claire ZENG](claire.s.zeng@gmail.com), [Dimitri Lesnoff](dimitri.lesnoff@gmail.com),[Igor Martayan](igor@martayan.org),[Matthieu LACOTE](mat.lac702@gmail.com) and **Tutor** [Pascal LAFOURCADE](Pascal.LAFOURCADE@uca.fr).</br>
+**Group Member**: Kelun CHAI, [Claire ZENG](claire.s.zeng@gmail.com), [Dimitri Lesnoff](dimitri.lesnoff@gmail.com), [Igor Martayan](igor@martayan.org), [Matthieu LACOTE](mat.lac702@gmail.com) and **Tutor** [Pascal LAFOURCADE](Pascal.LAFOURCADE@uca.fr).</br>
 This repository contains:
 1. **Python scripts** (.py files) to transform the graph.
 2. **OCaml scripts** to create cnf clauses.
@@ -13,6 +14,7 @@ This repository contains:
 - [Background](#background)
 - [Introduction](#introduction)
 - [Install](#install)
+- [Results](#results)
 
 ## Background
 Course at Summer School on Cryptography, Blockchain and Program Verification [Mathinfoly 2019](http://www.mathinfoly.org/)
@@ -29,3 +31,5 @@ In the Three Color Problem, we want to see if we can color the graph so that onl
 ## Install
 ![Glucose](https://www.labri.fr/perso/lsimon/img/glue-stick-120px.jpg)
 This project uses [Glucose](https://www.labri.fr/perso/lsimon/glucose/). Go check them out if you don't have them locally installed. 
+
+## Results
