@@ -2,7 +2,7 @@
 \select@language {french}
 \beamer@sectionintoc {2}{Introduction}{3}{0}{1}
 \beamer@subsectionintoc {2}{1}{Pr\'esentation du probl\`eme}{3}{0}{1}
-\beamer@sectionintoc {3}{Mod\'elisation}{6}{0}{2}
+\beamer@sectionintoc {3}{Formalisation}{6}{0}{2}
 \beamer@subsectionintoc {3}{1}{Formalisation en logique du premier ordre}{6}{0}{2}
 \beamer@sectionintoc {4}{Mod\`ele pour SAT-Solver}{10}{0}{3}
 \beamer@subsectionintoc {4}{1}{Variables et clauses}{10}{0}{3}
