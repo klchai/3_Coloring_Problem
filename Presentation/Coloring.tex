@@ -1,0 +1,391 @@
+\documentclass{beamer}
+
+% \usepackage{beamerthemesplit} // Activate for custom appearance
+\usepackage[french]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usetheme{Madrid}
+\setbeamertemplate{blocks}[default]
+\usepackage{stmaryrd}
+\usepackage{hyperref}
+
+\usepackage{xcolor} 
+\usepackage{tikz} 
+\usetikzlibrary{graphs}
+\usetikzlibrary{graphs.standard}
+
+\usepackage{listings}
+\lstset{language=[Objective]Caml}
+\lstset{
+    breakatwhitespace=true,
+    breaklines=true,
+    columns=fullflexible,
+    keepspaces=true,
+    mathescape=true,
+    numbers=none,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    tabsize=4,
+}
+
+\setbeamertemplate{caption}[numbered]
+
+\setbeamertemplate{navigation symbols}{}
+
+\makeatletter
+\pgfmathdeclarefunction{alpha}{1}{%
+  \pgfmathint@{#1}%
+  \edef\pgfmathresult{\pgffor@alpha{\pgfmathresult}}%
+}
+
+\usepackage{graphicx}
+
+
+\title{3-Coloration de graphes}
+\author[Chai, Lacote, Lesnoff, Martayan, Zeng]{K. \textsc{Chai}, M. \textsc{Lacote}, D. \textsc{Lesnoff}, I. \textsc{Martayan}, C. \textsc{Zeng}}
+\date{\today}
+
+\institute{Ecole d'été de mathématique et d'informatique}
+%{Cryptographie, blockchain et vérification de programmes}
+% logo of my university
+\titlegraphic{\includegraphics[width=2.5cm]{logomathinfoly.png}}
+
+\logo{%
+   \includegraphics[scale=0.6]{LicenseCC80x15.png}%
+   }
+\begin{document}
+
+\frame{\titlepage}
+
+\section[Outline]{}
+\frame{\tableofcontents}
+
+\section{Introduction}
+\subsection{Présentation du problème}
+\frame
+{
+  \frametitle{Définitions}
+
+ \begin{block}{Définition}
+
+ Un \textit{graphe} est la donnée d'un couple $(V,E)$ composé de:
+ \begin{itemize}
+ \item $V$ d'un ensemble de \textit{sommets} ou \textit{noeuds};
+ \item $E  \subseteq \{ \{ x,y \} | (x,y)\in V^2 \wedge x \neq y \}$,  d'un ensemble d'arêtes, qui sont des paires de sommets. 
+ \end{itemize} 
+Un graphe \textit{orienté} possède des arêtes ayant une orientation. 
+ \end{block}
+ 
+\begin{figure}
+\center
+  \begin{tikzpicture}
+\graph[counterclockwise=4,
+        empty nodes, nodes={circle,draw, minimum size=0.01cm}] {a[fill=black],  b[fill=black], c[fill=black], d[fill = black]
+  };
+\draw (a) edge[black, thick] (b);
+\draw (b) edge[black, thick] (c);
+\draw (c) edge[black, thick] (a);
+\end{tikzpicture}
+\caption{Un graphe avec $|V| = 4$ et $|E|=3$}
+\end{figure}
+ }
+ 
+ \frame
+{
+  \frametitle{$k$-coloration}
+
+
+
+ \begin{block}{Problème de $k$-coloration}
+ Etant donné un graphe non orienté $G = (V,E)$,  et un entier $k \geq 1$, existe-t-il une \textit{coloration} $c$ : $ V \rightarrow \{1,2, \cdots, k\}$ telle que : $\forall \{u,v\} \in E, c(u) \neq c(v)$ ? 
+  \end{block}
+  
+  On se place dans le cas $k=3$. 
+  
+  
+  \begin{figure}
+  \center
+  \begin{tikzpicture}
+\graph[counterclockwise=4,
+        empty nodes, nodes={circle,draw, minimum size=0.01cm}] {a[fill=white],  b[fill=white], c[fill=white], d[fill = white]
+  };
+\draw (a) edge[black, thick] (b);
+\draw (b) edge[black, thick] (c);
+\draw (c) edge[black, thick] (a);
+\draw (d) edge[black, thick] (a);
+
+\end{tikzpicture}
+\caption{Exemple de graphe à colorer}
+\end{figure}
+ }
+ 
+  \frame
+{
+  \frametitle{$3$-coloration : exemples}
+ 
+ \begin{figure}
+  \center
+  \begin{tikzpicture}
+\graph[counterclockwise=4,
+        nodes, nodes={circle,draw, minimum size=0.01cm}] {1[fill=blue],  2[fill=red], 3[fill=green], 4[fill = red]
+  };
+\draw (1) edge[black, thick] (2);
+\draw (2) edge[black, thick] (3);
+\draw (4) edge[black, thick] (1);
+\draw (1) edge[black, thick] (3);
+
+\end{tikzpicture}
+\caption{3-coloriage avec $|V|=4$ et $|E|=4$}
+
+\end{figure}
+
+ 
+ \begin{figure}
+  \center
+  \begin{tikzpicture}
+\graph[counterclockwise=4,
+        nodes, nodes={circle,draw, minimum size=0.01cm}] {1[fill=white],  2[fill=white], 3[fill=white], 4[fill = white]
+  };
+\draw (1) edge[black, thick] (2);
+\draw (2) edge[black, thick] (3);
+\draw (3) edge[black, thick] (4);
+\draw (4) edge[black, thick] (1);
+\draw (1) edge[black, thick] (3);
+\draw (2) edge[black, thick] (4);
+
+\end{tikzpicture}
+\caption{3-coloriage impossible avec $|V|=4$ et $|E|=6$}
+\end{figure}
+  
+ }
+
+
+\section{Modélisation}
+
+\subsection{Formalisation en logique du premier ordre}
+\frame
+{
+  \frametitle{Formalisation en logique du premier ordre}
+
+\begin{block}{Notations}
+Un graphe \textit{non orienté} $G = (V,E)$ : 
+  \begin{itemize}
+  \item $n := |V| $ le nombre de noeuds;
+  \item $p := |E| $ le nombre d'arêtes;
+  \end{itemize} 
+\end{block}
+
+\begin{block}{Signature}
+Nous considérons la signature  $\Sigma = \{ e^{r2} , c^{r2}, n^{f0}, p^{f0}  \}$ ayant la sémantique suivante: 
+
+  \begin{itemize}
+  \item $e(x,y)$ : $x$ est voisin de $y$;
+  \item $c(x,j)$ : $x$ a la couleur $j$.
+  \end{itemize}
+ \end{block}
+
+}
+
+\frame
+{
+  \frametitle{Formalisation en logique du premier ordre}
+
+\begin{block}{Contraintes}
+  \begin{enumerate}
+  \item<1-> Tout sommet du graphe est coloré;
+  \item<2-> Tout sommet possède au plus une couleur;
+  \item<3-> Deux sommets voisins ont des couleurs différentes. 
+  \end{enumerate}
+  \end{block}
+  
+   \begin{block}{Expressions en logique du premier ordre}
+
+   \begin{enumerate}
+  \item<1-> $\forall x  \in \llbracket 1, n \rrbracket, \exists j \in \llbracket 1,k \rrbracket , c(x,j) $;
+  \item<2-> $\forall x \in \llbracket 1,n \rrbracket, \exists i \in \llbracket 1,k \rrbracket,  (c(x,i) \implies (\bigwedge_{j\neq i} \neg c(x,j))) $;
+  \item<3-> $\forall x,y \in \llbracket n \rrbracket, \forall  i \in \llbracket 1,k \rrbracket , \neg (e(x,y) \wedge (c(x,i) \wedge c(y,i)) $. 
+  \end{enumerate}
+\end{block}
+}
+
+\section{Modèle pour SAT-Solver}
+
+\subsection{Variables et clauses}
+\frame
+{
+  \frametitle{Format et variables}
+
+   \begin{block}{Fichier d'entrée}
+  \begin{itemize}
+  \item $n$ et $p$ sur la première ligne
+  \item $p$ lignes décrivant les paires de sommets reliées par une arête
+  \end{itemize}
+  \end{block}
+  
+   \begin{block}{Variables}
+  \begin{itemize}
+  \item $3n$ variables $x_{(i-1) n+(j-1)}$ où $i \in \llbracket 1,n \rrbracket $, $j \in \llbracket 1,3 \rrbracket$  \end{itemize}
+  \end{block}
+
+  \begin{block}{Nombre de clauses}
+  \begin{itemize}
+  \item $27n + 3p$ clauses \end{itemize}
+  \end{block}
+}
+
+\section{Fonctionnement du programme}
+
+\subsection{Structure du projet}
+\frame{
+	\frametitle{Fonctionnement du programme}
+	\begin{block}{Programme OCaml}<1->
+		\begin{itemize}
+			\item Lecture du fichier d'entrée
+			\item Génération de la forme normale conjonctive
+		\end{itemize}
+	\end{block}
+	\begin{block}{Programme Python}<2->
+		\begin{itemize}
+			\item Appel du programme OCaml
+			\item Appel du SAT solveur
+			\item Affichage du graphe à partir de la solution
+		\end{itemize}
+	\end{block}
+}
+
+\subsection{Type de données et algorithmes}
+\begin{frame}[fragile]
+	\frametitle{Type de données et algorithmes}
+		\begin{lstlisting}
+			type formule =
+			  |Var of int
+			  |Non of formule
+			  |Et of formule * formule
+			  |Ou of formule * formule;;
+		\end{lstlisting}
+		\begin{enumerate}
+			\item Traduction récursive en forme normale conjonctive
+			\item Réécriture avec des fonctions récursives terminales
+			\item Généralisation pour le problème de $k$-coloration
+		\end{enumerate}
+\end{frame}
+
+\subsection{Performances}
+
+\frame
+{
+\frametitle{Performances du programme}
+\framesubtitle{Amélioration du modèle}
+  \begin{figure}[!htb]
+        \begin{center}
+            \includegraphics[width=8.5cm]{p3.png}
+        \end{center}
+        \caption{Temps d'exécution en fonction de $n$}
+    \end{figure}
+}
+\frame
+{
+\frametitle{Performances du programme}
+\framesubtitle{Amélioration du modèle}
+  \begin{figure}[!htb]
+        \begin{center}
+            \includegraphics[width=8.5cm]{p4.png}
+        \end{center}
+        \caption{Temps d'exécution en fonction de $np$}
+    \end{figure}
+}
+
+\frame
+{
+\frametitle{Performances du programme}
+\framesubtitle{Limites du modèle}
+
+  \begin{figure}[!htb]
+        \begin{center}
+            \includegraphics[width=8.5cm]{p5.png}
+        \end{center}
+        \caption{Temps d'exécution en fonction de $n$}
+
+    \end{figure}
+}
+\frame
+{
+\frametitle{Performances du programme}
+\framesubtitle{Limites du modèle}
+
+  \begin{figure}[!htb]
+        \begin{center}
+            \includegraphics[width=8.5cm]{p6.png}
+        \end{center}
+        \caption{Temps d'exécution en fonction de $n p$}
+
+    \end{figure}
+}
+
+\section{Résultats}
+
+\subsection{Résultats du programme}
+
+\frame
+{
+\frametitle{Résultats du programme}
+
+  \begin{figure}[!htb]
+        \begin{center}
+            \includegraphics[width = 5 cm]{../graphes_solution/graphe_solution_1.png}
+        \end{center}
+                \caption{Une solution pour $n=5$ et $p=8$}
+    \end{figure}
+}
+
+\subsection{Conclusion et autres applications}
+
+\frame
+{
+\frametitle{Conclusion et autre application}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+		\begin{figure}[!htb]
+        \begin{center}
+            \includegraphics[width = 4cm]{sudoku.png}
+        \end{center}
+                \caption{Une grille de sudoku}
+	    \end{figure}
+			
+		\end{column}
+
+		\begin{column}{0.5\textwidth}
+  		\begin{itemize}
+  			\item 9 couleurs
+  			\item 81 sommets
+  			\item lignes, colonnes et blocs reliés
+  		\end{itemize}
+		\end{column}
+	\end{columns}
+}
+
+\begin{frame}[allowframebreaks]
+  \frametitle<presentation>{Bibliographie}    
+  \begin{thebibliography}{10}    
+  \beamertemplatebookbibitems
+  \bibitem{P. Lafourcade}
+    P.~Lafourcade.
+    \newblock {\em Cours de logique}.
+    \newblock Ecole d'été de mathématique et d'informatique - Mathinfoly, 2019.
+  \beamertemplatearticlebibitems
+  \bibitem{Domajoc}
+    D.~Babic.
+    \newblock Satisfiability Suggested Format.
+    \newblock \href{http://www.domagoj-babic.com/uploads/ResearchProjects/Spear/dimacs-cnf.pdf}{Domagoj-Babic-Website}, 1993.
+ 
+
+   \beamertemplatearticlebibitems
+  \bibitem{Wiki}
+   	Wikipedia
+    \newblock Boolean satisfiability problem.
+   	\newblock  \href{https://en.wikipedia.org}{Wikipedia page}, 2019.
+  \end{thebibliography}
+\end{frame}
+
+\end{document}

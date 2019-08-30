@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{tikz}
+
+
+\title{Tikz training}
+
+
+\begin{document}
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}[line cap=round,line join=round, x=5cm,y = 5cm]
+        \fill[color=white] (1,1) -- (2,1) -- (2,2) -- (1,2) -- cycle;
+        \draw [color=blue] (1,1)-- (2,1);
+        \draw [color=blue] (2,1)-- (2,2);
+        \draw [color=blue] (2,2)-- (1,2);
+        \draw [color = blue] (1,2) -- (1,1);
+        %\begin{scriptsize}
+        \fill [color=black] (1,1) circle (1.5pt);
+        \draw[color=black,anchor= north east] (1,1) node {$A$};
+        \fill [color=black] (2,1) circle (1.5pt);
+        \draw[color=black,anchor = north west] (2,1) node {$B$};
+        \fill [color=black] (2,2) circle (1.5pt);
+        \draw[color=black,anchor = south west] (2,2) node {$C$};
+        \fill [color=black] (1,2) circle (1.5pt);
+        \draw[color=black,anchor = south] (1,2) node {$D$};
+        %\end{scriptsize}
+    \end{tikzpicture}
+    \caption{Graphe Complet $K_4$}
+    \label{fig:K5}
+\end{figure}
+
+\end{document}

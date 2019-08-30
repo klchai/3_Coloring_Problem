@@ -1,0 +1,66 @@
+\beamer@endinputifotherversion {3.36pt}
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\sectionentry {1}{Outline}{2}{Outline}{0}}
+\headcommand {\beamer@sectionpages {1}{1}}
+\headcommand {\beamer@subsectionpages {1}{1}}
+\headcommand {\slideentry {1}{0}{1}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\sectionentry {2}{Introduction}{3}{Introduction}{0}}
+\headcommand {\beamer@sectionpages {2}{2}}
+\headcommand {\beamer@subsectionpages {2}{2}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{3}{Pr\'esentation du probl\`eme}}\headcommand {\beamer@subsectionpages {3}{2}}
+\headcommand {\slideentry {2}{1}{1}{3/3}{Pr\'esentation du probl\`eme}{0}}
+\headcommand {\beamer@framepages {3}{3}}
+\headcommand {\slideentry {2}{1}{2}{4/4}{Pr\'esentation du probl\`eme}{0}}
+\headcommand {\beamer@framepages {4}{4}}
+\headcommand {\slideentry {2}{1}{3}{5/5}{Pr\'esentation du probl\`eme}{0}}
+\headcommand {\beamer@framepages {5}{5}}
+\headcommand {\sectionentry {3}{Mod\'elisation}{6}{Mod\'elisation}{0}}
+\headcommand {\beamer@sectionpages {3}{5}}
+\headcommand {\beamer@subsectionpages {3}{5}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{6}{Formalisation en logique du premier ordre}}\headcommand {\beamer@subsectionpages {6}{5}}
+\headcommand {\slideentry {3}{1}{1}{6/6}{Formalisation en logique du premier ordre}{0}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\slideentry {3}{1}{2}{7/9}{Formalisation en logique du premier ordre}{0}}
+\headcommand {\beamer@framepages {7}{9}}
+\headcommand {\sectionentry {4}{Mod\`ele pour SAT-Solver}{10}{Mod\`ele pour SAT-Solver}{0}}
+\headcommand {\beamer@sectionpages {6}{9}}
+\headcommand {\beamer@subsectionpages {6}{9}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{10}{Variables et clauses}}\headcommand {\beamer@subsectionpages {10}{9}}
+\headcommand {\slideentry {4}{1}{1}{10/10}{Variables et clauses}{0}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\sectionentry {5}{Fonctionnement du programme}{11}{Fonctionnement du programme}{0}}
+\headcommand {\beamer@sectionpages {10}{10}}
+\headcommand {\beamer@subsectionpages {10}{10}}
+\headcommand {\beamer@subsectionentry {0}{5}{1}{11}{Structure du projet}}\headcommand {\beamer@subsectionpages {11}{10}}
+\headcommand {\slideentry {5}{1}{1}{11/12}{Structure du projet}{0}}
+\headcommand {\beamer@framepages {11}{12}}
+\headcommand {\beamer@subsectionentry {0}{5}{2}{13}{Type de donn\'ees et algorithmes}}\headcommand {\beamer@subsectionpages {11}{12}}
+\headcommand {\slideentry {5}{2}{1}{13/13}{Type de donn\'ees et algorithmes}{0}}
+\headcommand {\beamer@framepages {13}{13}}
+\headcommand {\beamer@subsectionentry {0}{5}{3}{14}{Performances}}\headcommand {\beamer@subsectionpages {13}{13}}
+\headcommand {\slideentry {5}{3}{1}{14/14}{Performances}{0}}
+\headcommand {\beamer@framepages {14}{14}}
+\headcommand {\slideentry {5}{3}{2}{15/15}{Performances}{0}}
+\headcommand {\beamer@framepages {15}{15}}
+\headcommand {\slideentry {5}{3}{3}{16/16}{Performances}{0}}
+\headcommand {\beamer@framepages {16}{16}}
+\headcommand {\slideentry {5}{3}{4}{17/17}{Performances}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\sectionentry {6}{R\'esultats}{18}{R\'esultats}{0}}
+\headcommand {\beamer@sectionpages {11}{17}}
+\headcommand {\beamer@subsectionpages {14}{17}}
+\headcommand {\beamer@subsectionentry {0}{6}{1}{18}{R\'esultats du programme}}\headcommand {\beamer@subsectionpages {18}{17}}
+\headcommand {\slideentry {6}{1}{1}{18/18}{R\'esultats du programme}{0}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\beamer@subsectionentry {0}{6}{2}{19}{Conclusion et autres applications}}\headcommand {\beamer@subsectionpages {18}{18}}
+\headcommand {\slideentry {6}{2}{1}{19/19}{Conclusion et autres applications}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\slideentry {6}{2}{2}{20/20}{Conclusion et autres applications}{0}}
+\headcommand {\beamer@framepages {20}{20}}
+\headcommand {\beamer@partpages {1}{20}}
+\headcommand {\beamer@subsectionpages {19}{20}}
+\headcommand {\beamer@sectionpages {18}{20}}
+\headcommand {\beamer@documentpages {20}}
+\headcommand {\def \inserttotalframenumber {17}}

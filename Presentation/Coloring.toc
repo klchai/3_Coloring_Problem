@@ -1,0 +1,15 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {french}
+\beamer@sectionintoc {2}{Introduction}{3}{0}{1}
+\beamer@subsectionintoc {2}{1}{Pr\'esentation du probl\`eme}{3}{0}{1}
+\beamer@sectionintoc {3}{Mod\'elisation}{6}{0}{2}
+\beamer@subsectionintoc {3}{1}{Formalisation en logique du premier ordre}{6}{0}{2}
+\beamer@sectionintoc {4}{Mod\`ele pour SAT-Solver}{10}{0}{3}
+\beamer@subsectionintoc {4}{1}{Variables et clauses}{10}{0}{3}
+\beamer@sectionintoc {5}{Fonctionnement du programme}{11}{0}{4}
+\beamer@subsectionintoc {5}{1}{Structure du projet}{11}{0}{4}
+\beamer@subsectionintoc {5}{2}{Type de donn\'ees et algorithmes}{13}{0}{4}
+\beamer@subsectionintoc {5}{3}{Performances}{14}{0}{4}
+\beamer@sectionintoc {6}{R\'esultats}{18}{0}{5}
+\beamer@subsectionintoc {6}{1}{R\'esultats du programme}{18}{0}{5}
+\beamer@subsectionintoc {6}{2}{Conclusion et autres applications}{19}{0}{5}

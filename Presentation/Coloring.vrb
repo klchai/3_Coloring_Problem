@@ -1,0 +1,13 @@
+\frametitle{Type de données et algorithmes}
+		\begin{lstlisting}
+			type formule =
+			  |Var of int
+			  |Non of formule
+			  |Et of formule * formule
+			  |Ou of formule * formule;;
+		\end{lstlisting}
+		\begin{enumerate}
+			\item Traduction récursive en forme normale conjonctive
+			\item Réécriture avec des fonctions récursives terminales
+			\item Généralisation pour le problème de $k$-coloration
+		\end{enumerate}
