@@ -12,4 +12,4 @@
 \beamer@subsectionintoc {5}{3}{Performances}{14}{0}{4}
 \beamer@sectionintoc {6}{R\'esultats}{18}{0}{5}
 \beamer@subsectionintoc {6}{1}{R\'esultats du programme}{18}{0}{5}
-\beamer@subsectionintoc {6}{2}{Conclusion et autres applications}{19}{0}{5}
+\beamer@subsectionintoc {6}{2}{Conclusion et autres applications}{20}{0}{5}

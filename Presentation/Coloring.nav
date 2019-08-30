@@ -54,13 +54,15 @@
 \headcommand {\beamer@subsectionentry {0}{6}{1}{18}{R\'esultats du programme}}\headcommand {\beamer@subsectionpages {18}{17}}
 \headcommand {\slideentry {6}{1}{1}{18/18}{R\'esultats du programme}{0}}
 \headcommand {\beamer@framepages {18}{18}}
-\headcommand {\beamer@subsectionentry {0}{6}{2}{19}{Conclusion et autres applications}}\headcommand {\beamer@subsectionpages {18}{18}}
-\headcommand {\slideentry {6}{2}{1}{19/19}{Conclusion et autres applications}{0}}
+\headcommand {\slideentry {6}{1}{2}{19/19}{R\'esultats du programme}{0}}
 \headcommand {\beamer@framepages {19}{19}}
-\headcommand {\slideentry {6}{2}{2}{20/20}{Conclusion et autres applications}{0}}
+\headcommand {\beamer@subsectionentry {0}{6}{2}{20}{Conclusion et autres applications}}\headcommand {\beamer@subsectionpages {18}{19}}
+\headcommand {\slideentry {6}{2}{1}{20/20}{Conclusion et autres applications}{0}}
 \headcommand {\beamer@framepages {20}{20}}
-\headcommand {\beamer@partpages {1}{20}}
-\headcommand {\beamer@subsectionpages {19}{20}}
-\headcommand {\beamer@sectionpages {18}{20}}
-\headcommand {\beamer@documentpages {20}}
-\headcommand {\def \inserttotalframenumber {17}}
+\headcommand {\slideentry {6}{2}{2}{21/21}{Conclusion et autres applications}{0}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\beamer@partpages {1}{21}}
+\headcommand {\beamer@subsectionpages {20}{21}}
+\headcommand {\beamer@sectionpages {18}{21}}
+\headcommand {\beamer@documentpages {21}}
+\headcommand {\def \inserttotalframenumber {18}}
